@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::file-selector-button {
+    /* p-2 text-lg font-semibold rounded-lg border border-black rounder-lg transition-transform hover:scale-105 hover:opacity-75 w-[150px]  */
+    padding:.25rem;
+    border-radius: .5rem;
+    font-weight: 600;
+      border:none;
+ margin-right: .5rem;
+  }
+  input::file-selector-button:active{
+    opacity: .75;
+  }
+ input::file-selector-button:hover{
+cursor: pointer;
+outline:1px solid black;
+ }
+ select:first-child{
+    color:black
+ }
