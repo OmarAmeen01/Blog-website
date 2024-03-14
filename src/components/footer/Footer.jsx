@@ -3,7 +3,7 @@ import { Logo } from "../bridge";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div className="flex felx-row justify-between bg-black p-5 ">
+    <div className="flex felx-row justify-between bg-black p-5">
       <div className="flex flex-col" id="logo">
         <Logo className="text-white" />
         <p className="text-[#a7a8ac] ">&copy; 2024 Giga Blog </p>

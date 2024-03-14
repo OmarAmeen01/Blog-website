@@ -9,7 +9,6 @@ function EditPost() {
   const navigate = useNavigate();
   useEffect(() => {
     if (slug) {
-      console.log("slug: " + slug);
       databaseServices.getPost(slug).then((post) => {
         if (post) {
           setpost(post);

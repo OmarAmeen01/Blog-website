@@ -72,7 +72,7 @@ function SignUp() {
       <p className="text-lg">
         Already have an Account{" "}
         <span className="p-2 text-blue-800 underline font-semibold hover:opacity-75">
-          <Link>Sign in</Link>
+          <Link to="/login">Sign in</Link>
         </span>
       </p>
     </div>

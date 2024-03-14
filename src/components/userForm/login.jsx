@@ -6,7 +6,6 @@ import { Button, Input, Logo } from "../bridge";
 import { login as authLogin } from "../../store/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 function Login() {
-  console.log("helllow");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
