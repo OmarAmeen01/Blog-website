@@ -3,25 +3,12 @@ import { Logo } from "../bridge";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div className="flex felx-row justify-between bg-black p-5">
-      <div className="flex flex-col" id="logo">
-        <Logo className="text-white" />
-        <p className="text-[#a7a8ac] ">&copy; 2024 Giga Blog </p>
-        <div className="flex flex-row gap-2">
-          <Link>
-            <button className="text-[#a7a8ac] hover:text-white">
-              Terms of service
-            </button>
-          </Link>
-          <Link>
-            <button className="text-[#a7a8ac] hover:text-white">
-              Privacy Policy
-            </button>
-          </Link>
-        </div>
-      </div>
-      <div id="links" className="flex flex-col gap-2">
-        <ul id="social" className="flex flex-row gap-2">
+    <div className="flex sm:mt-[260px] max-[520px]:flex-col   felx-row justify-between bg-black p-5">
+      <div
+        id="links"
+        className="flex  max-[640px]:flex-row max-[640px]:gap-8 gap-3 flex-col "
+      >
+        <ul id="social" className="flex flex-row max-[640px]:flex-col gap-2">
           <p className="text-white text-md font-bold">Social</p>
           <li className="text-[#a7a8ac] hover:text-white">
             <a className=" decoration-none " href="youtube.com">
@@ -44,7 +31,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-        <ul id="pages" className="flex flex-row gap-2">
+        <ul id="pages" className="flex max-[640px]:flex-col flex-row gap-2">
           <p className="text-white text-md font-bold">Navigation</p>
           <li className="text-[#a7a8ac] hover:text-white">
             <Link to="/">Home</Link>
@@ -55,14 +42,11 @@ function Footer() {
           <li className="text-[#a7a8ac] hover:text-white">
             <Link>Contact us</Link>
           </li>
-          <li className="text-[#a7a8ac] hover:text-white">
-            <Link to="/login">Login</Link>
-          </li>
-          <li className="text-[#a7a8ac] hover:text-white">
-            <Link to="/signup">Create an account</Link>
-          </li>
         </ul>
-        <ul id="community" className="text-white flex flex-row gap-2">
+        <ul
+          id="community"
+          className="text-white max-[640px]:flex-col flex flex-row gap-2"
+        >
           <p className="text-md font-bold">Community</p>
           <li className="text-[#a7a8ac] hover:text-white">
             <a className=" decoration-none" href="discord.com">
@@ -85,6 +69,22 @@ function Footer() {
             </a>
           </li>
         </ul>
+      </div>
+      <div className="flex flex-col max-[520px]:mt-5 " id="logo">
+        <Logo className="text-white" />
+        <p className="text-[#a7a8ac] ">&copy; 2024 Giga Blog </p>
+        <div className="flex mt-5 max-[640px]:flex-col   flex-row gap-2">
+          <Link>
+            <button className="text-[#a7a8ac] hover:text-white">
+              Terms of service
+            </button>
+          </Link>
+          <Link>
+            <button className="text-[#a7a8ac] hover:text-white">
+              Privacy Policy
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

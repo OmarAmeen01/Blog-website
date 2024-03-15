@@ -25,7 +25,7 @@ function SignUp() {
   };
 
   return (
-    <div className="w-[500px] m-auto   mb-[198px] bg-white p-5 rounded-xl shadow-xl  flex flex-col place-items-center mt-5  ">
+    <div className="max-w-md m-auto   mb-[198px] bg-white p-5 rounded-xl shadow-xl  flex flex-col place-items-center mt-5  ">
       <Logo className="text-center mb-5" />
       <h2 className=" border-b-2 border-black  p-2 font-bold text-xl mb-5 text-center">
         Create an account
@@ -36,7 +36,7 @@ function SignUp() {
           <Input
             label="Name "
             type="text"
-            className="text-lg p-2 rounded-xl border border-black ml-[45px]"
+            className="text-lg max-[520px]:mt-3 p-2 rounded-xl border border-black ml-[45px]"
             placeholder="Enter your name"
             {...register("name", {
               required: true,
@@ -47,7 +47,7 @@ function SignUp() {
             type="email"
             placeholder="
    Enter your email"
-            className="text-lg p-2 rounded-xl border border-black ml-[50px]"
+            className="text-lg max-[520px]:mt-3 p-2 rounded-xl border border-black ml-[50px]"
             {...register("email", {
               required: true,
               validate: {
@@ -61,13 +61,15 @@ function SignUp() {
             label="Password "
             type="password"
             placeholder="Type a password"
-            className="text-lg p-2 rounded-xl border border-black ml-4"
+            className="text-lg max-[520px]:mt-3 p-2 rounded-xl border border-black ml-4 max-[406px]:ml-12"
             {...register("password", {
               required: true,
             })}
           />
         </div>
-        <Button type="submit" className=" my-5 mx-[140px]" children="Sign in" />
+        <div className="flex">
+          <Button type="submit" className=" my-5 m-auto" children="Sign in" />
+        </div>
       </form>
       <p className="text-lg">
         Already have an Account{" "}

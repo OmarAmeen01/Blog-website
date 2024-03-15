@@ -19,7 +19,7 @@ function Home() {
       <h2 className="text-xl p-2 border-b-2 font-bold">
         Checkout latest posts
       </h2>
-      <div className="mb-[90px]  flex flex-row ">
+      <div className="mb-[90px] max-[640px]:flex-col flex flex-row ">
         {posts.map((post) => {
           return (
             <div key={post.$id}>
