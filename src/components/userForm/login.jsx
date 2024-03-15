@@ -26,7 +26,7 @@ function Login() {
     }
   };
   return (
-    <div className="w-[500px] m-auto   mb-[198px] bg-white p-5 rounded-xl shadow-xl  flex flex-col place-items-center mt-5  ">
+    <div className="max-w-md m-auto   mb-[198px] bg-white p-5 rounded-xl shadow-xl  flex flex-col place-items-center mt-5  ">
       <Logo className="text-center mb-5" />
       <h2 className=" border-b-2 border-black  p-2 font-bold text-xl mb-5 text-center">
         Sign into your account
@@ -37,7 +37,7 @@ function Login() {
           <Input
             label="Email "
             type="email"
-            className=" text-lg p-2 rounded-xl border border-black ml-[50px]"
+            className="text-lg max-[520px]:mt-3 p-2 rounded-xl border border-black ml-[50px]"
             placeholder="
    Enter your email"
             {...register("email", {
@@ -53,7 +53,7 @@ function Login() {
             label="Password "
             type="password"
             placeholder="Type a password"
-            className="text-lg p-2 rounded-xl border border-black ml-4"
+            className="text-lg max-[520px]:mt-3 p-2 rounded-xl border border-black ml-4 max-[406px]:ml-12"
             {...register("password", {
               required: true,
               validate: {

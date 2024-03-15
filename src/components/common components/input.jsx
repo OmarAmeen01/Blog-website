@@ -9,7 +9,7 @@ const Input = forwardRef(function input(
     <div>
       {label && (
         <label
-          className="after:content-['*'] after:text-red-600 after:text-2xl text-xl"
+          className="after:content-['*'] after:text-red-600 after:text-2xl ml-8 text-xl"
           htmlFor={id}
         >
           {label}

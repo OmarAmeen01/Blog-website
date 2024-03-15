@@ -12,10 +12,13 @@ function Select({ options = [], className = "", label, ...props }, ref) {
           {label}
         </label>
       )}{" "}
-      <select id={id} ref={ref} className={className} {...props}>
-        <option value="choose an option" selected disabled hidden>
-          Set status
-        </option>
+      <select
+        id={id}
+        ref={ref}
+        className={className}
+        {...props}
+        value="Set status"
+      >
         {options?.map((option) => (
           <option key={option} value={option}>
             {option}

@@ -34,7 +34,7 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="p-3 bg-white  mb-[200px] rounded-xl shadow-xl">
+    <div className="p-3 mx-5 bg-white  mb-[200px] rounded-xl shadow-xl">
       <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
         <img
           className="rounded-lg w-full h-[400px] object-cover

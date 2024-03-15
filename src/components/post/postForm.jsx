@@ -76,7 +76,7 @@ function PostForm({ post }) {
           <Input
             label="Title "
             type="text"
-            className="text-lg p-2 rounded-xl border hover:outline border-black ml-4"
+            className=" text-lg  max-[520px]:mt-4 p-2 rounded-xl border border-black ml-12"
             placeholder="What is on your mind..."
             {...register("title", {
               required: true,
@@ -86,7 +86,7 @@ function PostForm({ post }) {
             label="Slug"
             type="text"
             placeholder="What is on your mind..."
-            className="text-lg p-2 hover:outline rounded-xl border border-slate-400 ml-4"
+            className="text-lg max-[520px]:mt-4 ml-12 p-2 hover:outline rounded-xl border border-slate-400 "
             onInput={(e) =>
               setValue("slug", slugGenerator(e.currentTarget.value), {
                 shouldValidate: true,
@@ -100,7 +100,7 @@ function PostForm({ post }) {
           <Input
             label="Upload image "
             type="file"
-            className="font-semibold text-lg  text-neutral-400 ml-4 p-1 w-[260px] rounded-xl border hover:cursor-pointer hover:outline border-black"
+            className="font-semibold max-[520px]:ml-12 text-lg mt-3 text-neutral-400   ml-4 p-1 w-[260px] rounded-xl border hover:cursor-pointer hover:outline border-black"
             accept="image/png, image/jpeg, image/jpg, image/gif"
             {...register("image", {
               required: !post,
@@ -117,18 +117,18 @@ function PostForm({ post }) {
             })}
           />
         </div>
-        <div className="mt-10 flex justify-between ">
+        <div className="mt-10 flex  justify-between ">
           <Select
             options={["Active", "Hidden"]}
             label="Status "
-            className=" ml-5  p-2 text-lg font-semibold rounded-lg border border-black rounder-lg   w-[150px] "
+            className=" ml-5 max-[520px]:text-sm p-2 text-lg text-black font-semibold rounded-lg border border-black rounder-lg   "
             {...register("status", { required: true })}
           />
 
           <div>
             <Button
               type="submit"
-              className=""
+              className=" "
               children={post ? "Update" : "Create"}
             />
           </div>
