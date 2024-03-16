@@ -100,7 +100,7 @@ function PostForm({ post }) {
           <Input
             label="Upload image "
             type="file"
-            className="text-md max-[520px]:ml-12  mt-3 text-neutral-400   ml-4 p-1 w-90 rounded-xl border  w-48 hover:cursor-pointer hover:outline border-black"
+            className="text-sm max-[520px]:ml-12  mt-3 text-neutral-400   ml-4 p-1 w-90 rounded-xl border  w-48 hover:cursor-pointer hover:outline border-black"
             accept="image/png, image/jpeg, image/jpg, image/gif"
             {...register("image", {
               required: !post,
