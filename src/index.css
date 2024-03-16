@@ -6,7 +6,7 @@ input::file-selector-button {
     /* p-2 text-lg font-semibold rounded-lg border border-black rounder-lg transition-transform hover:scale-105 hover:opacity-75 w-[150px]  */
     padding:.25rem;
     border-radius: .5rem;
-    font-weight: 600;
+    font-weight: 500;
       border:none;
  margin-right: .5rem;
   }
