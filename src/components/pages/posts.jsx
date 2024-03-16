@@ -34,7 +34,7 @@ export default function Post() {
   };
 
   return post ? (
-    <div className="p-3 mx-5 bg-white  mb-[200px] rounded-xl shadow-xl">
+    <div className="p-3 mx-5  bg-white  mb-[200px] rounded-xl shadow-xl">
       <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
         <img
           className="rounded-lg w-full h-[400px] object-cover
@@ -42,22 +42,29 @@ export default function Post() {
           src={storageService.previewFile(post.featuredImage)}
           alt={post.title}
         />
-
-        {isAuthor && (
-          <div className="absolute right-6 top-6">
-            <Link to={`/edit-post/${post.$id}`}>
-              <Button className="w-12 mr-3 bg-white text-black">Edit</Button>
-            </Link>
-            <Button className="w-20  bg-white text-black" onClick={deletePost}>
-              Delete
-            </Button>
-          </div>
-        )}
       </div>
       <div className="w-full mb-6">
         <h1 className="text-2xl font-bold">{post.title}</h1>
       </div>
       <div className="browser-css">{parse(post.content)}</div>
+      {isAuthor && (
+        <div
+          className="p-4
+        border-t-2 mt-3 border-black "
+        >
+          <Link to={`/edit-post/${post.$id}`}>
+            <Button className=" mr-3 text-sm  bg-white text-black">
+              Edit post{" "}
+            </Button>
+          </Link>
+          <Button
+            className="w-20 text-sm p-2 bg-white text-black"
+            onClick={deletePost}
+          >
+            Delete
+          </Button>
+        </div>
+      )}
     </div>
   ) : null;
 }
