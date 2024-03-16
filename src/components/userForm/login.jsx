@@ -64,7 +64,10 @@ function Login() {
           />
         </div>
 
-        <Button type="submit" className=" my-5 mx-[140px]" children="Sign in" />
+        <div className="flex">
+          {" "}
+          <Button type="submit" className=" my-5 m-auto" children="Sign in" />
+        </div>
       </form>
       <p className="text-lg">
         Already have an account

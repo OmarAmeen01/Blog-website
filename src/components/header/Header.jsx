@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Logout, Logo } from "../bridge";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const [clicked, setClicked] = useState(false);
   const authStatus = useSelector((state) => state.status);
 
   const navItems = [
@@ -34,7 +35,20 @@ function Header() {
             <Logo />
           </Link>
         </div>
-        <ul className="flex flex-row gap-3 ">
+        <div
+          className="text-4xl min-[500px]:hidden  transition-all duration-500"
+          onClick={() => setClicked(!clicked)}
+        >
+          <ion-icon name={clicked ? "close" : "menu"}></ion-icon>
+        </div>
+
+        <ul
+          className={`flex flex-row gap-3 max-[500px]:flex-col  max-[500px]:bg-white   max-[500px]:p-5 max-[500px]:shadow-xl max-[500px]:mt-12 max-[500px]:absolute left-0 max-[500px]:w-full transition-all  duration-500 ease-in-out ${
+            clicked
+              ? "top-2 opacity-100"
+              : "max-[500px]:top-[-400px] max-[500px]:opacity-0"
+          }`}
+        >
           {navItems.map((item) => {
             return item.active ? (
               <Link key={item.slug} to={item.slug}>
