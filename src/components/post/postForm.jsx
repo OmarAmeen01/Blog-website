@@ -86,7 +86,7 @@ function PostForm({ post }) {
             label="Slug"
             type="text"
             placeholder="What is on your mind..."
-            className="text-md max-[520px]:mt-4 ml-12 p-2 hover:outline rounded-xl border border-slate-400 "
+            className="text-md max-[520px]:mt-4 ml-12 p-2  rounded-xl border border-slate-400 "
             onInput={(e) =>
               setValue("slug", slugGenerator(e.currentTarget.value), {
                 shouldValidate: true,

@@ -11,14 +11,8 @@ function Select({ options = [], className = "", label, ...props }, ref) {
         >
           {label}
         </label>
-      )}{" "}
-      <select
-        id={id}
-        ref={ref}
-        className={className}
-        {...props}
-        value="Set status"
-      >
+      )}
+      <select id={id} ref={ref} className={className} {...props}>
         {options?.map((option) => (
           <option key={option} value={option}>
             {option}
