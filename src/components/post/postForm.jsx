@@ -1,13 +1,12 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Input, Button, Select, RTE } from "../bridge";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import databaseServices from "../../appwrite services/database";
-
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import storageService from "../../appwrite services/storage";
-
 function PostForm({ post }) {
+  const [isUploading, setIsUploading] = useState(false);
   const navigate = useNavigate();
   const userData = useSelector((state) => state.userData);
   const { register, handleSubmit, watch, setValue, control, getValues } =
@@ -22,6 +21,7 @@ function PostForm({ post }) {
 
   const submit = async (data) => {
     if (post) {
+      setIsUploading(true);
       const file = await storageService.uploadFile(data.image[0]);
       if (file) {
         await storageService.deleteFile(post.featuredImage);
@@ -33,19 +33,21 @@ function PostForm({ post }) {
       });
 
       if (postUpdate) {
+        setIsUploading(false);
         navigate(`/post/${postUpdate.$id}`);
       }
     } else {
+      setIsUploading(true);
       const file = await storageService.uploadFile(data.image[0]);
 
       if (file) {
         data.featuredImage = file.$id;
-        console.log(userData);
         const postUpdate = await databaseServices.createPost({
           ...data,
           userId: userData.$id,
         });
         if (postUpdate) {
+          setIsUploading(false);
           navigate(`/post/${postUpdate.$id}`);
         }
       }
@@ -69,7 +71,13 @@ function PostForm({ post }) {
     };
   }, [setValue, slugGenerator]);
 
-  return (
+  return isUploading ? (
+    <div className="h-[80vh] lg:h-[22.8vh] flex justify-center items-center">
+      <p className="text-3xl font-bold text-black animate-pulse absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
+        Uploading your post please wait....
+      </p>
+    </div>
+  ) : (
     <div className="max-w-md m-auto   mb-[198px] bg-white p-5 rounded-xl shadow-xl  flex flex-col place-items-center mt-5  ">
       <form onSubmit={handleSubmit(submit)}>
         <div className="flex  flex-col  gap-3">
