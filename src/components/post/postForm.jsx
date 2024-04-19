@@ -72,8 +72,8 @@ function PostForm({ post }) {
   }, [setValue, slugGenerator]);
 
   return isUploading ? (
-    <div className="w-[100vh] flex justify-center items-center">
-      <p className="text-3xl font-bold text-black animate-pulse absolute left-[50%] top-[30%] -translate-x-[50%] -translate-y-[50%]">
+    <div className="h-[80vh] lg:h-[22.8vh] flex justify-center items-center">
+      <p className="text-3xl font-bold text-black animate-pulse absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
         Uploading your post please wait....
       </p>
     </div>
