@@ -68,13 +68,13 @@ function SignUp() {
           />
         </div>
         <div className="flex">
-          <Button type="submit" className=" my-5 m-auto" children="Sign in" />
+          <Button type="submit" className=" my-5 m-auto" children="Sign up" />
         </div>
       </form>
       <p className="text-lg">
         Already have an Account{" "}
         <span className="p-2 text-blue-800 underline font-semibold hover:opacity-75">
-          <Link to="/login">Sign up</Link>
+          <Link to="/login">Sign in</Link>
         </span>
       </p>
     </div>
