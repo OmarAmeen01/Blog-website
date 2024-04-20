@@ -13,11 +13,17 @@ function SignUp() {
   const singup = async (data) => {
     setError("");
     try {
-      const session = authService.createUser(data);
-      if (session) {
-        const useData = authService.getCurrentUser();
-        if (useData) dispatch(login(useData));
-        navigate("/");
+      const createUser = authService.createUser(data);
+      if (createUser) {
+        const session = await authService.loginUser(data);
+        if (session) {
+          const useData = authService.getCurrentUser();
+          if (useData) {
+            location.reload();
+            dispatch(login(useData));
+            navigate("/");
+          }
+        }
       }
     } catch (error) {
       setError(error.message);
